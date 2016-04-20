@@ -22,7 +22,7 @@ The system will never get to know a user's private key. All the decryption proce
 Deploy
 ------
 
-There are multiple ways to run a Flask application, you can visit the [Flask official documentation for deployment][http://flask.pocoo.org/docs/0.10/deploying/]. 
+There are multiple ways to run a Flask application, you can visit the [Flask official documentation for deployment](http://flask.pocoo.org/docs/0.10/deploying/). 
 
 It was tested with Ngnix + Gunicorn on a Ubuntu (14.04.3) server, and MySQL as database. To initialize the database, run the script "mysqlcreate" inside the script folder. Then install the required python libraries (pip install -r requirements.txt) and the OS packages (requirements.apt).
 
@@ -64,7 +64,7 @@ Architecture
 
 All communication must be over TLS. You should not use a self-signed certificate.
 
-![alt text](docs/images/gsenhaapi.png "Diagram")
+![alt text](docs/images/gsenhaapi.png)
 
 Generating RSA keys 
 -------------------
