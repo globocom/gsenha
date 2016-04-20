@@ -1,0 +1,21 @@
+{% extends "base2.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}GSenha{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Update password</h1>
+    <h3>Inform only what you want to change</h3>
+</div>
+
+{{ wtf.quick_form(form,form_type="horizontal", horizontal_columns=('lg', 5, 3)) }}
+<script type="text/javascript" src="/static/js/forge.min.js" integrity="sha512-G0FCSGfL7JE9vZW3P02yy3gYNjcV6atze6VH1WxBE+Ulwgw20S12f6Ijnlevc+6riVFZadeZoZpwJE5jI11hZw=="></script>
+<script type="text/javascript" src="/static/js/updatePass.js" integrity="sha512-mlssXdcA/iLeJwJYW/R81zrc3XHHqxTjaRBbWcUZpaVU9iTQ2dAbJco3afxRwQ8IStY4fCNMId58pOkUZJk9YQ=="></script>
+<script type="text/javascript" src="/static/js/purify.min.js" integrity="sha512-+M6KXBNkTtjDRCj249YUWuS+TAjbdJofIugBtTIT7bKl/jra86958tIObyUB1gfsYqjXMH4UrrRPoGngsDjGLg=="></script>
+
+<script>
+window.onload=setIdPasswd; 
+</script>
+
+{% endblock %}

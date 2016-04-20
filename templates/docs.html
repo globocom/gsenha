@@ -1,0 +1,107 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}GSenha{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="/static/css/navbar.css" integrity="sha512-I/u7v09+1Fyhja1dRsw/UHbJAsknPAV/knVqPy6LeSh8ti7ghTHCiw0WG5H3jLUAh8bWpAACsxVpcK4OWpqmmA==">
+{% endblock %}
+
+{% block navbar %}
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+             data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/login">GSenha</a>
+        </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</div>
+<div style="width:800px; margin:0 auto;">
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome to GSenha</h1>
+    <p>GSenha is the front-end for GSenha-API. </p>
+    <p>The goal is to make it easy and secure to store and share passwords in a corporate environment.</p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Architecture</h3>
+  </div>
+  <div class="panel-body">
+    <p>GSenha-API is a password manager, but not an usual one. Its architecture was designed to avoid information leakage in the case of a compromise. It is possible to store a password and share it among a group of users in a secure way, and also store a personal password, just for you. Storing a personal password is just like using another well-konw password manager like KeePass, PasswordSafe, Password Gorilla and others. The goal in GSenha is to be able to store a password and allow other people to have access to it in a secure way, without backdoors and no shared secret keys. This is done with asymmetric cryptography (private and public keys).</p>
+
+</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">GSenha usage</h3>
+  </div>
+  <div class="panel-body">
+    <p>In order to start using GSenha you have to add yourself. It is necessary a RSA key pair, to generate it just follow the instructions below. The key pair length must be 4096 bits.</p>
+</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Key generation</h3>
+  </div>
+  <div class="panel-body">
+<p><b>Generating private key:</b></p>
+  <code>$ openssl genrsa -out privkey.pem 4096</code>
+<br></br>
+<p>The generated file is your private key, its name will be "privkey.pem". Keep it secret!</p>
+<p>The file should begins with "-----BEGIN RSA PRIVATE KEY-----" and ends with "-----END RSA PRIVATE KEY-----".</p>
+<p><b>Generating public key:</b></p>
+  <code>$ openssl rsa -in privkey.pem -outform PEM -pubout -out public.pem</code>
+  <br></br>
+<p>The generated file is your public key, its name will be "public.pem".</p>
+<p>The file should begins with "-----BEGIN PUBLIC KEY-----" and ends with "-----END PUBLIC KEY-----".</p>
+<p>This one will be informed when adding yourserlf.</p>
+</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add a user</h3>
+  </div>
+  <div class="panel-body">
+    <p>A new user should go to "Add User" on the navbar and inform his/her LDAP credentials and his/her public key.</p>
+    <p>After that him/her can login. The private key will never leave your browser.</p>
+</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Unlock a new user</h3>
+  </div>
+  <div class="panel-body">
+    <p>If you are the first member of a group it will not be necessary any kind of unlock. In case there are already passwords added to a group you are member of, a new user will not be able to see them.</p>
+    <p>In this case an unlock is necessary. To do this an older user (that can see the passwords) must go to "Unlock User" on the navbar, inform the username and the group. After that the new user will be able to see all passwords.</p>
+</div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Private key fallback</h3>
+  </div>
+  <div class="panel-body">
+<p>The system is not able to retrieve your private key in case of loss. It is the user obligation to keep his/her private key safe. <b>DO NOT LOSE YOUR PRIVATE KEY!</b></p>
+</div>
+</div>
+</div>
+{% endblock %}

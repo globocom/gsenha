@@ -1,0 +1,56 @@
+{% extends "base2.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}GSenha{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Desbloqueando usuário</h1>
+</div>
+
+<div style="width:800px; margin:0 auto;">
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Unlocking a user</h3>
+  </div>
+  <div class="panel-body">
+    <p>All passwords from the group are being decrypted and encrypted with the server public key. When done all passwords will be send to server, decrypted with its pirvate key and encrypted with the new user public key. In the end the server's key will be deleted.</p>
+    <p>In this way the server will never know any private key, and yours will never leave your browser.</p>
+</div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0"
+  aria-valuemin="0" aria-valuemax="100" style="width:0%" id="progress">
+    0%
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <div class=" col-lg-3">
+  <input class="form-control" style="display:none;" id="key" value="{{ pubkey }}">
+  </div>
+</div>
+
+<div class="form-group" >
+  <div class=" col-lg-3">
+  <input class="form-control" style="display:none;" id="passwds" value="{{ passwds }}">
+  </div>
+</div>
+
+<script type="text/javascript" src="/static/js/forge.min.js" integrity="sha512-G0FCSGfL7JE9vZW3P02yy3gYNjcV6atze6VH1WxBE+Ulwgw20S12f6Ijnlevc+6riVFZadeZoZpwJE5jI11hZw=="></script>
+<script type="text/javascript" src="/static/js/unlock.js" integrity="sha512-kY122YnrTTvi3uZGWt0V5DDAFyEezsLryh0LUucsk6JTQTXlEzq0n4+Q+9K4Y7WMddUbfSJrCga8Hy+lol1D1Q=="></script>
+<script type="text/javascript" src="/static/js/purify.min.js" integrity="sha512-+M6KXBNkTtjDRCj249YUWuS+TAjbdJofIugBtTIT7bKl/jra86958tIObyUB1gfsYqjXMH4UrrRPoGngsDjGLg=="></script>
+<script> 
+var passwds = document.getElementById('passwds').value;
+var token = '{{ token }}';
+var user = '{{ usertounlock }}';
+var group = '{{ group }}';
+
+window.onload=unlock(passwds,token,user,group)
+</script>
+
+{% endblock %}

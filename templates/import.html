@@ -1,0 +1,54 @@
+{% extends "base2.html" %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Import passwords from a file</h1>
+</div>
+
+<div style="width:100%;">
+<div style="float:left; width:50%;">
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Supported Files</h3>
+	</div>
+	<div class="panel-body">
+		<p>Files generated from Password Safe / Password Gorilla export (.csv) and from KeePassX (.xml)</p>
+		<p>Or .csv files with the following structure: <b>uuid,group,title,url,user,password,notes</b>
+		<p>Where, 
+		<p><b>uuid:</b> password id from the password manager, it will not be used.</p>
+		<p><b>group:</b> it will be a folder, if it does not exist it will be created.</p>
+		<p><b>tittle:</b> it will be the password name.</p>
+		<p><b>url:</b> same meaning</p>
+		<p><b>user:</b> it will be the login</p>
+		<p><b>password:</b> same meaning</p>
+		<p><b>notes:</b> it will be the description</p>
+		<p>All passwords will be imported to your personal folder.</p>
+	</div>
+</div>
+
+
+</div>
+<div style="float:right; width:50%;">
+
+
+<form class="form form-horizontal">
+<label class="control-label  col-lg-5" for="filepasswd">Import File</label>
+<div class=" col-lg-3">
+  <input id="filepasswd" type="file">
+</div>
+  <div class="form-group">
+  <div class="col-lg-offset-5 col-lg-3">
+    <input class="btn btn-default" id="submit" name="submit" type="submit" value="Submit" onClick="importPass('filepasswd')">
+  </div>
+</div>
+</form>
+</div>
+
+</div>
+<script type="text/javascript" src="/static/js/jquery.min.js" integrity="sha512-nhY06wKras39lb9lRO76J4397CH1XpRSLfLJSftTeo3+q2vP7PaebILH9TqH+GRpnOhfAGjuYMVmVTOZJ+682w==" ></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js" integrity="sha512-nBe/MAVnca0bCImmi2/WzJoGCgaUOMVDtTXFXUcxuLuFLUc3FGdOx8LR28WxgocUumd4Db5k5Ppjqz1M1Ijy1A==" ></script>
+<script type="text/javascript" src="/static/js/import.js" integrity="sha512-Q0fefMGjpoLHsy6fvr0TTbZtYK4+lMY0zk68bzvtVwNUCGEkdZKH5ZKVgOhTmIT4d9Tk26PJzi1VJS+XzLMPjg=="></script>
+<script type="text/javascript" src="/static/js/papaparse.min.js" integrity="sha512-EKcq86aWfuYPmH+kravs9lKX8gyssGSAw/xaf9Ltib5kQU1bs17XS/wyX6UkJcslfgp0NC9wcomz5YWhWPZlnA=="></script>
+{% endblock %}

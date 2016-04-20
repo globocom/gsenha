@@ -1,0 +1,49 @@
+{% extends "base3.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}GSenha{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Add User</h1>
+</div>
+
+<form method="post" class="form form-horizontal" role="form">
+
+{{ form.hidden_tag() }}
+
+<div class="form-group ">
+        <label class="control-label  col-lg-5" for="user">Username</label>
+        <div class=" col-lg-3">
+          <input class="form-control" placeholder="LDAP User" id="user" name="user" required type="text" value="">
+        </div>
+  </div>
+<div class="form-group ">
+        <label class="control-label  col-lg-5" for="password">Password</label>
+        <div class=" col-lg-3">
+          <input class="form-control" placeholder="LDAP Password" id="password" name="password" required type="password" value="">
+        </div>
+  </div>
+ <div class="form-group ">
+        <a target="_blank" href="/about" title="If you dont know what it is, read the docs."><strong>?</strong></a>   
+        <label class="control-label  col-lg-5" for="pk">Public Key</label>
+        <div class=" col-lg-3">
+          <textarea class="form-control" name="pk" required placeholder="Copy and paste your public key or choose the file." id="pk"></textarea>
+        </div>
+  </div>
+        <label class="control-label  col-lg-5" for="pkfile">Public Key File</label>
+        <div class=" col-lg-3">
+          <input id="pkfile" type="file" onchange="handleFiles(this.files)">
+        </div>
+
+  <div class="form-group">
+  <div class="col-lg-offset-5 col-lg-3">
+    <input class="btn btn-default" id="submit" name="submit" type="submit" value="Submit">
+  </div>
+  </div>
+</form>
+
+
+
+<script type="text/javascript" src="/static/js/adduser.js" integrity="sha512-dREvY6Ep2gFR0N8uNw5dzIJL7UkoVeuLujwhveZjapOVfBFyQim6xEGidYCF0Ng7yi5v9NAm/onZYpA05cCnYw=="></script>
+{% endblock %}

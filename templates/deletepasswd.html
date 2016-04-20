@@ -1,0 +1,12 @@
+{% extends "base2.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}GSenha{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Delete password</h1>
+</div>
+
+{{ wtf.quick_form(form,form_type="horizontal", horizontal_columns=('lg', 5, 4)) }}
+{% endblock %}
