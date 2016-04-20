@@ -64,7 +64,7 @@ Architecture
 
 All communication must be over TLS. You should not use a self-signed certificate.
 
-![alt text](docs/images/gsenhaapi.png)
+![alt text](gsenhaapi/docs/images/gsenhaapi.png)
 
 Generating RSA keys 
 -------------------
