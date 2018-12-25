@@ -10,8 +10,8 @@ There is one dependency, you must have a LDAP base. GSenha does not perform user
 Presentations
 -------------
 
-[Slides for presentation at the Nic.br Security Working Group (GTS25) - Only in Portuguese](ftp://ftp.registro.br/pub/gts/gts25/07-GerenciamentoSenhas.pdf)
-[Video for presentation at the Nic.br Security Working Group (GTS25) - Only in Portuguese](https://www.youtube.com/watch?v=WNtcEJK80TU)
+* [Slides for presentation at the Nic.br Security Working Group (GTS25) - Only in Portuguese](ftp://ftp.registro.br/pub/gts/gts25/07-GerenciamentoSenhas.pdf)
+* [Video for presentation at the Nic.br Security Working Group (GTS25) - Only in Portuguese](https://www.youtube.com/watch?v=WNtcEJK80TU)
 
 Private key fallback
 ----------------------
