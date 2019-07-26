@@ -1,0 +1,6 @@
+libmysqlclient-dev
+python-dev
+libldap2-dev
+libsasl2-dev
+libffi-dev
+libssl-dev

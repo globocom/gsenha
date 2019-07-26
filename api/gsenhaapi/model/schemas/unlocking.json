@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string"
+    },
+    "group": {
+      "type": "string"
+    },
+    "usertounlock": {
+      "type": "string"
+    },
+    "passwords": {
+      "type": "array"
+    }
+  },
+  "required": ["token","group","usertounlock","passwords"]
+}

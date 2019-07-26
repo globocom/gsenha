@@ -1,0 +1,16 @@
+Flask==1.0.2
+Flask-JWT==0.3.2
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.0
+MySQL-python==1.2.5
+pyasn1==0.4.5
+python-ldap==3.1.0
+requests==2.21.0
+Werkzeug==0.14.1
+wsgiref==0.1.2
+gunicorn==19.9.0
+cryptography==2.4.2
+Unidecode==1.0.23
+bcrypt==3.1.5
+jsonschema==2.6.0

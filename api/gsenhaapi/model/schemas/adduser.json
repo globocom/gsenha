@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "pubkey": {
+      "type": "string"
+    }
+  },
+  "required": ["user","password","pubkey"]
+}
