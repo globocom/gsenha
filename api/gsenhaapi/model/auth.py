@@ -37,7 +37,12 @@ class Auth:
 		search = '(cn=%s)' %user
 		searchAttribute = ["uidNumber"]
 
-		result = self.l.search_s(self.baseDN,scope,search,searchAttribute)
+		# We try recover user data using previous authenticated connection. If user don't have permissions, we fallback to gsenha's user
+		try:
+			result = self.l.search_s(self.baseDN,scope,search,searchAttribute)
+		except ldap.NO_SUCH_OBJECT:
+			self.l.simple_bind_s(self.who, self.cred)
+			result = self.l.search_s(self.baseDN,scope,search,searchAttribute)
 
 		self.l.unbind()
 		return result[0][1]['uidNumber'][0]
