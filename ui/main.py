@@ -12,16 +12,16 @@ from send_json import SendJson
 import json, uuid
 
 from flask import Flask, render_template, session, redirect, url_for, flash, jsonify, request
-from flask.ext.bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap
 import ast
 
-from flask.ext.wtf import Form
+from flask_wtf import FlaskForm
 from forms import *
 from datetime import timedelta
 
 bootstrap = Bootstrap(app)
 
-from flask.ext.login import LoginManager, login_user, login_required, logout_user, UserMixin
+from flask_login import LoginManager, login_user, login_required, logout_user, UserMixin
 
 import logging 
 from logging.handlers import SysLogHandler
