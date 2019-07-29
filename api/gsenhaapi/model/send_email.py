@@ -4,6 +4,8 @@ from email import utils
 from email.mime.text import MIMEText
 import sys
 from gsenhaapi.exceptions import InvalidUsage
+from gsenhaapi.model.log import Log
+log = Log()
 
 class Email:
 
@@ -68,7 +70,8 @@ Your private key will never be stored or sent to server, keep it safe!""" %(name
 		try:
 			server.sendmail(self.sender, [recipient], msg.as_string())
 		except smtplib.SMTPException:
-			raise InvalidUsage("Failed to send welcome email",500)
+			log_message = """action=|send_welcome_email| user=|%s| desc=|Failed to send welcome mail| result=|error|""" % (to)
+			log.log_info(log_message)
 		finally:
 			server.quit()
 

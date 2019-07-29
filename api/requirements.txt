@@ -1,9 +1,10 @@
 Flask==1.0.2
-Flask-JWT==0.3.2
+Flask-JWT==0.2.0
 itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.0
 MySQL-python==1.2.5
+mysqlclient==1.4.1
 pyasn1==0.4.5
 python-ldap==3.1.0
 requests==2.21.0
