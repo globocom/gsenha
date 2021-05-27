@@ -1,6 +1,6 @@
 Flask==1.0.2
 Babel==2.6.0
-Flask-AppBuilder==1.12.2
+Flask-AppBuilder==3.3.0
 Flask-BabelPkg==0.9.6
 Flask-Bootstrap==3.3.7.1
 Flask-Login==0.4.1
