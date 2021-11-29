@@ -6,7 +6,7 @@ MarkupSafe==1.1.0
 MySQL-python==1.2.5
 mysqlclient==1.4.1
 pyasn1==0.4.5
-python-ldap==3.1.0
+python-ldap==3.4.0
 requests==2.21.0
 Werkzeug==0.15.3
 wsgiref==0.1.2
